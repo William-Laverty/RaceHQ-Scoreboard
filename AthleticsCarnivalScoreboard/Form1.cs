@@ -1,19 +1,15 @@
-﻿using System;
+﻿using CsvHelper;
+using CsvHelper.Configuration;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
-using System.Net;
-using System.Runtime.InteropServices;
-using System.Configuration;
-using CsvHelper;
-using CsvHelper.Configuration;
 using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 #pragma warning disable IDE1006
 #pragma warning disable IDE0017
@@ -59,6 +55,11 @@ namespace AthleticsCarnivalScoreboard
 
         // Current file locked onto
         private String currentRaceFileLockedOn { get; set; }
+        public List<AthleticsCarnivalScoreboard.frmRaceCenter.LaneData> LaneDataList
+        {
+            get => laneDataList;
+            set => laneDataList = value;
+        }
 
         // Flag indicating whether to truncate times (i.e. remove the 10 minutes and above section)
         private Boolean truncateTimes = (ConfigurationManager.AppSettings["truncateTimes"] == "1" ? true : false);
@@ -74,6 +75,8 @@ namespace AthleticsCarnivalScoreboard
         // The scoreboard
         Scoreboard theScoreboard = new Scoreboard();
         private Boolean theScoreboardVisible = false;
+
+        private List<LaneData> laneDataList;
 
         public frmRaceCenter()
         {
@@ -117,30 +120,33 @@ namespace AthleticsCarnivalScoreboard
         {
 
             // Open a file dialog box to select the events file
-            OpenFileDialog eventFileDialog = new OpenFileDialog
+            var eventFileDialog = new OpenFileDialog
             {
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                Title = "Select event CSV file",
-                CheckFileExists = true,
-                CheckPathExists = true,
+                // Basic properties
+                Title = "Select race events CSV file",
                 DefaultExt = "csv",
                 Filter = "CSV files (*.csv)|*.csv",
                 FilterIndex = 2,
-                RestoreDirectory = true
+
+                // Initial directory settings
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                RestoreDirectory = true,
+
+                // Validation checks
+                CheckFileExists = true,
+                CheckPathExists = true
             };
+
 
             // Check if we have a file
             if (eventFileDialog.ShowDialog() == DialogResult.OK)
             {
-
                 // Load the lanes
                 if (loadLanes() == true)
                 {
-
                     // Load the event list
                     if (loadEventList(eventFileDialog.FileName) == true)
                     {
-
                         // Setup the combo box to have custom drawing
                         cmboEventList.DrawMode = DrawMode.OwnerDrawVariable;
                         cmboEventList.DrawItem += new DrawItemEventHandler(cmboEventList_DrawItem);
@@ -153,111 +159,57 @@ namespace AthleticsCarnivalScoreboard
                         // Check if the RaceHQ folder has been selected
                         if (raceHQDataFolderPath != null)
                         {
-
                             // Enable the other buttons
                             btnMonitorRaceFiles.Enabled = true;
-
                         }
-
                     }
-
                 }
-
             }
+        }
 
+        // Define a structure to hold lane data
+        public struct LaneData
+        {
+            public int LaneNumber { get; set; }
+            public string HouseCode { get; set; }
+            public string HouseName { get; set; }
+            public string HouseColor { get; set; }
+            public string TextColor { get; set; }
         }
 
         private Boolean loadLanes()
         {
-
             // Log
             logEntry("Loading lanes...");
 
-            // Create lane objects for each house
-            Lane laneTen = new Lane();
-            laneTen.lane = 1;
-            laneTen.house_code = "BN";
-            laneTen.house_name = "Burgmann";
-            laneTen.house_color = "fbc628";
-            laneTen.text_color = "000000";
-            laneList.Add(laneTen);
+            // Initialize the lane data
+            laneDataList = new List<LaneData>
+            {
+                new LaneData { LaneNumber = 1, HouseCode = "BN", HouseName = "Burgmann", HouseColor = "fbc628", TextColor = "000000" },
+                new LaneData { LaneNumber = 2, HouseCode = "SH", HouseName = "Sheaffe", HouseColor = "FFFFFF", TextColor = "000000" },
+                new LaneData { LaneNumber = 3, HouseCode = "MD", HouseName = "Middleton", HouseColor = "13a25e", TextColor = "FFFFFF" },
+                new LaneData { LaneNumber = 4, HouseCode = "EW", HouseName = "Edwards", HouseColor = "7c2325", TextColor = "FFFFFF" },
+                new LaneData { LaneNumber = 5, HouseCode = "HA", HouseName = "Hay", HouseColor = "000000", TextColor = "FFFFFF" },
+                new LaneData { LaneNumber = 6, HouseCode = "ED", HouseName = "Eddison", HouseColor = "1f3452", TextColor = "FFFFFF" },
+                new LaneData { LaneNumber = 7, HouseCode = "GY", HouseName = "Garnsey", HouseColor = "3890c8", TextColor = "FFFFFF" },
+                new LaneData { LaneNumber = 8, HouseCode = "BL", HouseName = "Blaxland", HouseColor = "e03930", TextColor = "FFFFFF" },
+                new LaneData { LaneNumber = 9, HouseCode = "JO", HouseName = "Jones", HouseColor = "1b4c2b", TextColor = "FFFFFF" },
+                new LaneData { LaneNumber = 10, HouseCode = "GN", HouseName = "Garran", HouseColor = "513263", TextColor = "FFFFFF" }
+            };
 
-            Lane laneOne = new Lane();
-            laneOne.lane = 2;
-            laneOne.house_code = "SH";
-            laneOne.house_name = "Sheaffe";
-            laneOne.house_color = "FFFFFF";
-            laneOne.text_color = "000000";
-            laneList.Add(laneOne);
-
-            Lane laneTwo = new Lane();
-            laneTwo.lane = 3;
-            laneTwo.house_code = "MD";
-            laneTwo.house_name = "Middleton";
-            laneTwo.house_color = "13a25e";
-            laneTwo.text_color = "FFFFFF";
-            laneList.Add(laneTwo);
-
-            Lane laneThree = new Lane();
-            laneThree.lane = 4;
-            laneThree.house_code = "EW";
-            laneThree.house_name = "Edwards";
-            laneThree.house_color = "7c2325";
-            laneThree.text_color = "FFFFFF";
-            laneList.Add(laneThree);
-
-            Lane laneFour= new Lane();
-            laneFour.lane = 5;
-            laneFour.house_code = "HA";
-            laneFour.house_name = "Hay";
-            laneFour.house_color = "000000";
-            laneFour.text_color = "FFFFFF";
-            laneList.Add(laneFour);
-
-            Lane laneFive = new Lane();
-            laneFive.lane = 6;
-            laneFive.house_code = "ED";
-            laneFive.house_name = "Eddison";
-            laneFive.house_color = "1f3452";
-            laneFive.text_color = "FFFFFF";
-            laneList.Add(laneFive);
-
-            Lane laneSix = new Lane();
-            laneSix.lane = 7;
-            laneSix.house_code = "GY";
-            laneSix.house_name = "Garnsey";
-            laneSix.house_color = "3890c8";
-            laneSix.text_color = "FFFFFF";
-            laneList.Add(laneSix);
-
-            Lane laneSeven = new Lane();
-            laneSeven.lane = 8;
-            laneSeven.house_code = "BL";
-            laneSeven.house_name = "Blaxland";
-            laneSeven.house_color = "e03930";
-            laneSeven.text_color = "FFFFFF";
-            laneList.Add(laneSeven);
-
-            Lane laneEight = new Lane();
-            laneEight.lane = 9;
-            laneEight.house_code = "JO";
-            laneEight.house_name = "Jones";
-            laneEight.house_color = "1b4c2b";
-            laneEight.text_color = "FFFFFF";
-            laneList.Add(laneEight);
-
-            Lane laneNine = new Lane();
-            laneNine.lane = 10;
-            laneNine.house_code = "GN";
-            laneNine.house_name = "Garran";
-            laneNine.house_color = "513263";
-            laneNine.text_color = "FFFFFF";
-            laneList.Add(laneNine);
+            // Convert LaneData to Lane objects and populate laneList
+            laneList = laneDataList.Select(data => new Lane
+            {
+                lane = data.LaneNumber,
+                house_code = data.HouseCode,
+                house_name = data.HouseName,
+                house_color = data.HouseColor,
+                text_color = data.TextColor
+            }).ToList();
 
             // Loop through each lane
             foreach (Lane laneObject in laneList)
             {
-
                 // Lane index = lane number - 1
                 var laneIndex = Convert.ToUInt16(laneObject.lane) - 1;
 
@@ -274,7 +226,6 @@ namespace AthleticsCarnivalScoreboard
 
                 // Set the house name for the lane
                 nameLabelControlList[laneIndex].Text = laneObject.house_name;
-
             }
 
             logEntry("Lanes loaded");
@@ -282,8 +233,6 @@ namespace AthleticsCarnivalScoreboard
 
             // Return success
             return true;
-
-
         }
 
         private Boolean loadEventList(String filename)

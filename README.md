@@ -42,7 +42,3 @@ cd AthleticsCarnivalScoreboard
 2. Open the project in Visual Studio, ensure all dependencies are properly set up, and restore the necessary NuGet packages.
 
 3. Build and run the application to start managing and visualizing race events.
-
-### 📝 License
-
-The code and documentation in this repository are licensed under the MIT License. You can find the full license text in the [LICENSE](LICENSE) file.

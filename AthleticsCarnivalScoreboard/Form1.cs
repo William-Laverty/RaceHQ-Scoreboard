@@ -13,6 +13,7 @@ using System.Runtime.InteropServices;
 using System.Configuration;
 using CsvHelper;
 using CsvHelper.Configuration;
+using System.Globalization;
 
 #pragma warning disable IDE1006
 #pragma warning disable IDE0017
@@ -294,10 +295,14 @@ namespace AthleticsCarnivalScoreboard
             // Read the event list CSV file into the eventList
             try
             {
-                using (var reader = new StreamReader(filename))
-                using (var csv = new CsvReader(reader))
+                CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture)
                 {
-                    csv.Configuration.HasHeaderRecord = false;
+                    HasHeaderRecord = false
+                };
+
+                using (var reader = new StreamReader(filename))
+                using (var csv = new CsvReader(reader, config))
+                {
                     eventList = csv.GetRecords<Event>().ToList();
                 }
 

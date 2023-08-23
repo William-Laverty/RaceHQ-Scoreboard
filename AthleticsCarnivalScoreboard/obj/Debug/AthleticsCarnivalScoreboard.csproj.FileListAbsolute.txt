@@ -32,3 +32,30 @@ C:/Users/Code Cadets/Desktop/athletics-carnival-master/athletics-carnival-master
 /Users/williamlaverty/Desktop/Athletics/athletics-carnival-master/athletics-carnival-master/Scoreboard Only/Visual Studio Project/AthleticsCarnivalScoreboard/AthleticsCarnivalScoreboard/obj/Debug/AthleticsCarnivalScoreboard.csproj.CopyComplete
 /Users/williamlaverty/Desktop/Athletics/athletics-carnival-master/athletics-carnival-master/Scoreboard Only/Visual Studio Project/AthleticsCarnivalScoreboard/AthleticsCarnivalScoreboard/obj/Debug/AthleticsCarnivalScoreboard.exe
 /Users/williamlaverty/Desktop/Athletics/athletics-carnival-master/athletics-carnival-master/Scoreboard Only/Visual Studio Project/AthleticsCarnivalScoreboard/AthleticsCarnivalScoreboard/obj/Debug/AthleticsCarnivalScoreboard.pdb
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.csproj.AssemblyReference.cache
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.csproj.SuggestedBindingRedirects.cache
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.exe.config
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.frmRaceCenter.resources
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.Properties.Resources.resources
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.Scoreboard.resources
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.csproj.GenerateResource.cache
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.csproj.CoreCompileInputs.cache
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.exe
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.pdb
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\App.config
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\AthleticsCarnivalScoreboard.exe.config
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\AthleticsCarnivalScoreboard.exe
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\AthleticsCarnivalScoreboard.pdb
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\CsvHelper.dll
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\System.Buffers.dll
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\System.Memory.dll
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\System.ValueTuple.dll
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\System.ValueTuple.xml
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\System.Buffers.xml
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\System.Memory.xml
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\bin\Debug\CsvHelper.xml
+C:\Users\Code Cadets\Desktop\RaceHQ-Scoreboard\AthleticsCarnivalScoreboard\obj\Debug\AthleticsCarnivalScoreboard.csproj.CopyComplete

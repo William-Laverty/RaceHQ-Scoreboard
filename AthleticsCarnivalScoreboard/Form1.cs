@@ -16,10 +16,8 @@ using System.Windows.Forms;
 
 namespace AthleticsCarnivalScoreboard
 {
-
     public partial class frmRaceCenter : Form
     {
-
         // The control list for the lane panels shown on screen
         private List<Panel> panelControlList { get; set; }
 
@@ -29,29 +27,14 @@ namespace AthleticsCarnivalScoreboard
         private List<Label> timeLabelControlList { get; set; }
         private List<Label> placeLabelControlList { get; set; }
 
-        // Stores an array of Event objects
-        private List<Event> eventList { get; set; }
-
-        // Stores an array of Lane objects
-        private List<Lane> laneList = new List<Lane>();
-
-        // Store an array of Result objects for a race
-        private List<Result> resultList = new List<Result>();
-
-        // Stores the current event object
-        private Event currentEventObject { get; set; }
-
-        // Stores the path to the Race HQ data folder
-        private string raceHQDataFolderPath { get; set; }
-
-        // Current index selected in the event combobox
-        private int currentEventComboboxIndex = -1;
-
-        // Flag indicating whether the users event selection change in the combobox should be honored
-        private Boolean handleEventChangeComboboxFlag = true;
-
-        // File system watcher
-        private FileSystemWatcher fileSystemWatcher { get; set; }
+        private List<Event> eventList { get; set; } // Stores an array of Event objects
+        private List<Lane> laneList = new List<Lane>(); // Stores an array of Lane objects
+        private List<Result> resultList = new List<Result>(); // Store an array of Result objects for a race
+        private Event currentEventObject { get; set; } // Stores the current event 
+        private string raceHQDataFolderPath { get; set; } // Stores the path to the Race HQ data folder
+        private int currentEventComboboxIndex = -1; // Current index selected in the event combobox
+        private Boolean handleEventChangeComboboxFlag = true; // Flag indicating whether the users event selection change in the combobox should be honored
+        private FileSystemWatcher fileSystemWatcher { get; set; } // File system watcher
 
         // Current file locked onto
         private String currentRaceFileLockedOn { get; set; }
@@ -60,12 +43,12 @@ namespace AthleticsCarnivalScoreboard
             get => laneDataList;
             set => laneDataList = value;
         }
+        private List<LaneData> laneDataList;
 
         // Flag indicating whether to truncate times (i.e. remove the 10 minutes and above section)
         private Boolean truncateTimes = (ConfigurationManager.AppSettings["truncateTimes"] == "1" ? true : false);
 
-        // ID of the RHQ stopwatch
-        private int rhqStopwatchID = 0x000;
+        private int rhqStopwatchID = 0x000; // ID of the RHQ stopwatch
 
         // Thread-safe delegates
         delegate void UpdateScoreboardFromBackground(List<Result> resultList);
@@ -76,8 +59,6 @@ namespace AthleticsCarnivalScoreboard
         Scoreboard theScoreboard = new Scoreboard();
         private Boolean theScoreboardVisible = false;
 
-        private List<LaneData> laneDataList;
-
         public frmRaceCenter()
         {
             InitializeComponent();
@@ -85,26 +66,13 @@ namespace AthleticsCarnivalScoreboard
 
         private void frmRaceCenter_Load(object sender, EventArgs e)
         {
-
             // Populate all the control lists: (list index) + 1 = lane number
-
-            // Panels
-            panelControlList = new List<Panel>() { pnlLane1, pnlLane2, pnlLane3, pnlLane4, pnlLane5, pnlLane6, pnlLane7, pnlLane8, pnlLane9, pnlLane10 };
-
-            // Lane labels
-            laneLabelControlList = new List<Label>() { lblLane1, lblLane2, lblLane3, lblLane4, lblLane5, lblLane6, lblLane7, lblLane8, lblLane9, lblLane10 };
-
-            // Name labels
-            nameLabelControlList = new List<Label>() { lblLane1Name, lblLane2Name, lblLane3Name, lblLane4Name, lblLane5Name, lblLane6Name, lblLane7Name, lblLane8Name, lblLane9Name, lblLane10Name };
-
-            // Time labels
-            timeLabelControlList = new List<Label>() { lblLane1Time, lblLane2Time, lblLane3Time, lblLane4Time, lblLane5Time, lblLane6Time, lblLane7Time, lblLane8Time, lblLane9Time, lblLane10Time };
-
-            // Place labels
-            placeLabelControlList = new List<Label>() { lblLane1Place, lblLane2Place, lblLane3Place, lblLane4Place, lblLane5Place, lblLane6Place, lblLane7Place, lblLane8Place, lblLane9Place, lblLane10Place };
-
-            // Update the truncateTimes flag on the scoreboard
-            theScoreboard.truncateTimes = truncateTimes;
+            panelControlList = new List<Panel>() { pnlLane1, pnlLane2, pnlLane3, pnlLane4, pnlLane5, pnlLane6, pnlLane7, pnlLane8, pnlLane9, pnlLane10 }; // Panels
+            laneLabelControlList = new List<Label>() { lblLane1, lblLane2, lblLane3, lblLane4, lblLane5, lblLane6, lblLane7, lblLane8, lblLane9, lblLane10 }; // Lane labels
+            nameLabelControlList = new List<Label>() { lblLane1Name, lblLane2Name, lblLane3Name, lblLane4Name, lblLane5Name, lblLane6Name, lblLane7Name, lblLane8Name, lblLane9Name, lblLane10Name }; // Name labels
+            timeLabelControlList = new List<Label>() { lblLane1Time, lblLane2Time, lblLane3Time, lblLane4Time, lblLane5Time, lblLane6Time, lblLane7Time, lblLane8Time, lblLane9Time, lblLane10Time }; // Time labels
+            placeLabelControlList = new List<Label>() { lblLane1Place, lblLane2Place, lblLane3Place, lblLane4Place, lblLane5Place, lblLane6Place, lblLane7Place, lblLane8Place, lblLane9Place, lblLane10Place }; // Place labels
+            theScoreboard.truncateTimes = truncateTimes; // Update the truncateTimes flag on the scoreboard
 
             // Quickly open and close the scoreboard so the form loads
             theScoreboard.Show();
@@ -113,12 +81,10 @@ namespace AthleticsCarnivalScoreboard
             // Set the top label to have a transparent background
             lblDropDown.Parent = lblFileMonitorWarning;
             lblDropDown.BackColor = System.Drawing.Color.Transparent;
-
         }
 
         private void btnLoadEvents_Click(object sender, EventArgs e)
         {
-
             // Open a file dialog box to select the events file
             var eventFileDialog = new OpenFileDialog
             {
@@ -179,7 +145,6 @@ namespace AthleticsCarnivalScoreboard
 
         private Boolean loadLanes()
         {
-            // Log
             logEntry("Loading lanes...");
 
             // Initialize the lane data

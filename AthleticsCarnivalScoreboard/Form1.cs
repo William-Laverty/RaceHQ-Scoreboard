@@ -201,43 +201,32 @@ namespace AthleticsCarnivalScoreboard
         }
         // --- Updates --
 
-        private Boolean loadEventList(String filename)
+        private bool loadEventList(string filename)
         {
-
-            // Log
             logEntry("Loading events from file...");
 
-            // Read the event list CSV file into the eventList
             try
             {
-                CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture)
+                var config = new CsvConfiguration(CultureInfo.InvariantCulture)
                 {
                     HasHeaderRecord = false
                 };
 
-                using (var reader = new StreamReader(filename))
-                using (var csv = new CsvReader(reader, config))
-                {
-                    eventList = csv.GetRecords<Event>().ToList();
-                }
+                using var reader = new StreamReader(filename);
+                using var csv = new CsvReader(reader, config);
 
-                logEntry("Events loaded");
-                logEntry("----");
+                eventList = csv.GetRecords<Event>().ToList();
 
-                // Return success
+                logEntry("Events successfully loaded.----");
                 return true;
-
             }
-            catch
+            catch (Exception ex) // Catch a general exception
             {
-                logEntry("Error loading events");
-                logEntry("----");
-
-                // Return success
+                logEntry($"Error loading events: {ex.Message}----");
                 return false;
             }
-
         }
+
 
         private void btnRaceHQFolder_Click(object sender, EventArgs e)
         {

@@ -212,10 +212,10 @@ namespace AthleticsCarnivalScoreboard
                     HasHeaderRecord = false
                 };
 
-                using var reader = new StreamReader(filename);
-                using var csv = new CsvReader(reader, config);
+                using (var reader = new StreamReader(filename))
+                using (var csv = new CsvReader(reader, config))
 
-                eventList = csv.GetRecords<Event>().ToList();
+                    eventList = csv.GetRecords<Event>().ToList();
 
                 logEntry("Events successfully loaded.----");
                 return true;

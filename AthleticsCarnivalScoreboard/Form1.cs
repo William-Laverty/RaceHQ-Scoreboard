@@ -199,6 +199,7 @@ namespace AthleticsCarnivalScoreboard
             // Return success
             return true;
         }
+        // --- Updates --
 
         private Boolean loadEventList(String filename)
         {

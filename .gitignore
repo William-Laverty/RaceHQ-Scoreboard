@@ -7,6 +7,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+.vs/
 
 # User-specific files
 *.rsuser
@@ -18,6 +19,9 @@
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
+
+# Temporary build directory
+AthleticsCarnivalScoreboard/obj/
 
 # Folder config file
 Desktop.ini

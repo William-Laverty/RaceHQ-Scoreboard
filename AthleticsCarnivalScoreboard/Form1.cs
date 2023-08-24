@@ -199,7 +199,6 @@ namespace AthleticsCarnivalScoreboard
             // Return success
             return true;
         }
-        // --- Updates --
 
         private bool loadEventList(string filename)
         {
@@ -226,7 +225,7 @@ namespace AthleticsCarnivalScoreboard
                 return false;
             }
         }
-
+        // --- Updates --
 
         private void btnRaceHQFolder_Click(object sender, EventArgs e)
         {

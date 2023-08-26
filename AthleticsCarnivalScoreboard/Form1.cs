@@ -73,6 +73,7 @@ namespace AthleticsCarnivalScoreboard
             timeLabelControlList = new List<Label>() { lblLane1Time, lblLane2Time, lblLane3Time, lblLane4Time, lblLane5Time, lblLane6Time, lblLane7Time, lblLane8Time, lblLane9Time, lblLane10Time }; // Time labels
             placeLabelControlList = new List<Label>() { lblLane1Place, lblLane2Place, lblLane3Place, lblLane4Place, lblLane5Place, lblLane6Place, lblLane7Place, lblLane8Place, lblLane9Place, lblLane10Place }; // Place labels
             theScoreboard.truncateTimes = truncateTimes; // Update the truncateTimes flag on the scoreboard
+            btnRaceHQFolder.Enabled = false;  // Disable RaceHQ folder selection button
 
             // Quickly open and close the scoreboard so the form loads
             theScoreboard.Show();
@@ -127,6 +128,7 @@ namespace AthleticsCarnivalScoreboard
                         {
                             // Enable the other buttons
                             btnMonitorRaceFiles.Enabled = true;
+                            btnRaceHQFolder.Enabled = true;
                         }
                     }
                 }
@@ -214,9 +216,10 @@ namespace AthleticsCarnivalScoreboard
                 using (var reader = new StreamReader(filename))
                 using (var csv = new CsvReader(reader, config))
 
-                    eventList = csv.GetRecords<Event>().ToList();
+                eventList = csv.GetRecords<Event>().ToList();
 
                 logEntry("Events successfully loaded.----");
+                btnRaceHQFolder.Enabled = true;
                 return true;
             }
             catch (Exception ex) // Catch a general exception
@@ -225,167 +228,132 @@ namespace AthleticsCarnivalScoreboard
                 return false;
             }
         }
-        // --- Updates --
 
         private void btnRaceHQFolder_Click(object sender, EventArgs e)
         {
-
-            // Check we are currently not monitoring for changes
-            if ((fileSystemWatcher != null) && (fileSystemWatcher.EnableRaisingEvents))
+            // If currently monitoring for changes, show an error message and return early.
+            if (fileSystemWatcher != null && fileSystemWatcher.EnableRaisingEvents)
             {
                 MessageBox.Show("You must stop monitoring files before changing the Race HQ folder.", "Error", MessageBoxButtons.OK);
+                return;
             }
 
-            else
+            // Provide the user with necessary information about the folder they should select.
+            var confirmMessage = MessageBox.Show(
+                "You need to start and save a race before doing this so the folder is created.\n\n" +
+                "Here is a sample path to locate the correct folder: C:\\Users\\Test\\Documents\\ResultsHQ\\Pack\\19-09-2018\\Backup\n\n" +
+                "Ensure you select the Backup folder, as it contains the required files.",
+                "Important",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button2
+            );
+
+            // If the user acknowledges the information, proceed to select the folder.
+            if (confirmMessage != DialogResult.OK) return;
+
+            // Open a dialog to select the Race HQ data folder.
+            using (FolderBrowserDialog raceHQFolderDialog = new FolderBrowserDialog { ShowNewFolderButton = false })
             {
+                if (raceHQFolderDialog.ShowDialog() != DialogResult.OK) return;
 
-                // Show an information message
-                var confirmMessage = MessageBox.Show("You need to start and save a race before doing this so the folder is created.\n\nHere is a sample path so you can locate the correct folder: C:\\Users\\Test\\Documents\\ResultsHQ\\Pack\\19-09-2018\\Backup\n\nMake sure you select the Backup folder, as that contains the files with the required information.", "Important", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+                // Update the folder path and set up file system watcher.
+                raceHQDataFolderPath = raceHQFolderDialog.SelectedPath;
+                createFileSystemWatcher(raceHQDataFolderPath);
 
-                if (confirmMessage == DialogResult.OK)
-                {
+                logEntry($"Race HQ folder selected: {raceHQDataFolderPath}");
+                logEntry("----");
 
-                    // Open a dialog to select the Race HQ data folder
-                    FolderBrowserDialog raceHQFolderDialog = new FolderBrowserDialog
-                    {
-                        ShowNewFolderButton = false
-                    };
-
-                    if (raceHQFolderDialog.ShowDialog() == DialogResult.OK)
-                    {
-
-                        // Set the folder path
-                        raceHQDataFolderPath = raceHQFolderDialog.SelectedPath;
-
-                        // Create the file system watcher
-                        createFileSystemWatcher(raceHQDataFolderPath);
-
-                        logEntry("Race HQ folder selected: " + raceHQDataFolderPath);
-                        logEntry("----");
-
-                        // Check if the events have been loaded
-                        if (eventList.Count > 0)
-                        {
-
-                            // Enable the other buttons
-                            btnMonitorRaceFiles.Enabled = true;
-
-                        }
-
-                    }
-
-                }
-
+                // If events have been loaded, enable the monitoring button.
+                btnMonitorRaceFiles.Enabled = eventList != null && eventList.Count > 0;
             }
-
         }
 
         private void cmboEventList_DrawItem(object sender, DrawItemEventArgs e)
         {
-            if (e.Index == -1)
-                return;
-            ComboBox combo = ((ComboBox)sender);
+            if (e.Index == -1) return;
 
-            // Get a reference to the event for this row
             var eventObject = eventList[e.Index];
 
-            // Check if the race is gated - assume yes unless otherwise told
-            var rowColor = Color.Black;
-            if (eventObject.is_gated == false)
-            {
-                rowColor = Color.LightGray;
-            }
+            // Determine row color based on whether the event is gated.
+            Color rowColor = eventObject.is_gated ? Color.Black : Color.LightGray;
 
-            // Draw the text
             using (SolidBrush brush = new SolidBrush(rowColor))
             {
-                Font font = e.Font;
-
                 e.DrawBackground();
 
-                var eventDisplayName = eventObject.event_id + ": " + eventObject.event_name;
+                // Create a display name for the event.
+                var eventDisplayName = $"{eventObject.event_id}: {eventObject.event_name}";
 
-                e.Graphics.DrawString(eventDisplayName, font, brush, e.Bounds);
+                e.Graphics.DrawString(eventDisplayName, e.Font, brush, e.Bounds);
                 e.DrawFocusRectangle();
             }
         }
 
-        // Called when the user changes the selected item or it is changed through code
         private void cmboEventList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!handleEventChangeComboboxFlag || currentEventComboboxIndex == cmboEventList.SelectedIndex)
+                return;
 
-            // Check if the change should be honored
-            if ((handleEventChangeComboboxFlag == true) && (currentEventComboboxIndex != cmboEventList.SelectedIndex))
+            currentEventComboboxIndex = cmboEventList.SelectedIndex;
+            var eventObject = eventList[cmboEventList.SelectedIndex];
+            changeEvent(eventObject);
+
+            if (!eventObject.is_gated)
             {
-
-                // Update the currentEventComboBoxIndex
-                currentEventComboboxIndex = cmboEventList.SelectedIndex;
-
-                // Get the event object for the new event
-                var eventObject = eventList[cmboEventList.SelectedIndex];
-
-                // Change the event
-                changeEvent(eventObject);
-
-                // Alert if this is an ungated rate
-                if (eventObject.is_gated == false)
-                {
-                    MessageBox.Show("This is an ungated race. Race Center will not work with ungated races.", "Ungated Race");
-                }
-
+                MessageBox.Show("This is an ungated race. Race Center will not work with ungated races.", "Ungated Race");
             }
 
-            // Get rid of the focus
             lstLogBox.Focus();
-
-            // Reset the variable to true
             handleEventChangeComboboxFlag = true;
-
         }
 
-        // Called when the user changes the selected item
         private void cmboEventList_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            var confirmMessageBox = MessageBox.Show(
+                "Do you want to change events? This will clear the scoreboard and unlock from the current file (if any).",
+                "Event Change",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button2
+            );
 
-            // Confirm the event change and actions
-            var confirmMessageBox = MessageBox.Show("Do you want to change events? This will clear the scoreboard and unlock from the current file (if any).", "Event Change", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-
-            // No, do not change events
             if (confirmMessageBox != DialogResult.Yes)
             {
                 handleEventChangeComboboxFlag = false;
                 cmboEventList.SelectedIndex = currentEventComboboxIndex;
             }
-
         }
 
-        // Called when we change events
         private void changeEvent(Event eventObject, bool releaseLockOnFile = true)
         {
-
-            // Release lock on the file, if needed (the default)
+            // If needed, release the lock on the file (default behavior)
             if (releaseLockOnFile)
             {
                 lockOntoFileFromBackground(null);
             }
 
-            // Update the current event object
+            // Update the current event and clear the LED board
             currentEventObject = eventObject;
-
-            // Clear the LED board
             theScoreboard.clearScoreboardFull();
 
-            // Set the header on the LED board
+            // If there's a valid current event, set its details on the LED board header
             if (currentEventObject != null)
-                theScoreboard.changeHeaderLabel("Event " + currentEventObject.event_id + ": " + currentEventObject.event_name);
-
-            // Clear the admin scoreboard
-            for (int i = 0; i < panelControlList.Count; i = i + 1)
             {
-                timeLabelControlList[i].Text = "";
-                placeLabelControlList[i].Text = "";
+                string headerLabel = $"Event {currentEventObject.event_id}: {currentEventObject.event_name}";
+                theScoreboard.changeHeaderLabel(headerLabel);
             }
 
+            // Clear the admin scoreboard
+            foreach (var timeLabel in timeLabelControlList)
+            {
+                timeLabel.Text = "";
+            }
+
+            foreach (var placeLabel in placeLabelControlList)
+            {
+                placeLabel.Text = "";
+            }
         }
 
         private void cmboEventList_DropDownClosed(object sender, EventArgs e)
@@ -393,6 +361,8 @@ namespace AthleticsCarnivalScoreboard
             // Get rid of the focus
             lstLogBox.Focus();
         }
+
+        // -- Updates -- //
 
         private void btnNextEvent_Click(object sender, EventArgs e)
         {

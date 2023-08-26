@@ -33,6 +33,7 @@
             this.lblDropDown = new System.Windows.Forms.Label();
             this.lstLogBox = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRaceHQFolder = new System.Windows.Forms.Button();
             this.btnFileLockOn = new System.Windows.Forms.Button();
             this.btnMonitorRaceFiles = new System.Windows.Forms.Button();
             this.btnLoadEvents = new System.Windows.Forms.Button();
@@ -97,7 +98,6 @@
             this.lblLane10Time = new System.Windows.Forms.Label();
             this.lblLane10Name = new System.Windows.Forms.Label();
             this.lblLane10 = new System.Windows.Forms.Label();
-            this.btnRaceHQFolder = new System.Windows.Forms.Button();
             this.lblFileMonitorWarning = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.pnlLane1.SuspendLayout();
@@ -147,10 +147,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.btnRaceHQFolder);
             this.groupBox1.Controls.Add(this.btnFileLockOn);
             this.groupBox1.Controls.Add(this.btnMonitorRaceFiles);
             this.groupBox1.Controls.Add(this.btnLoadEvents);
+            this.groupBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.groupBox1.Location = new System.Drawing.Point(30, 723);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(512, 94);
@@ -158,11 +161,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admin";
             // 
+            // btnRaceHQFolder
+            // 
+            this.btnRaceHQFolder.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRaceHQFolder.Location = new System.Drawing.Point(142, 29);
+            this.btnRaceHQFolder.Name = "btnRaceHQFolder";
+            this.btnRaceHQFolder.Size = new System.Drawing.Size(105, 48);
+            this.btnRaceHQFolder.TabIndex = 22;
+            this.btnRaceHQFolder.Text = "Select RaceHQ Folder";
+            this.btnRaceHQFolder.UseVisualStyleBackColor = true;
+            this.btnRaceHQFolder.Click += new System.EventHandler(this.btnRaceHQFolder_Click);
+            // 
             // btnFileLockOn
             // 
             this.btnFileLockOn.BackColor = System.Drawing.Color.DarkOrange;
             this.btnFileLockOn.Enabled = false;
-            this.btnFileLockOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFileLockOn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFileLockOn.ForeColor = System.Drawing.Color.White;
             this.btnFileLockOn.Location = new System.Drawing.Point(387, 29);
             this.btnFileLockOn.Name = "btnFileLockOn";
@@ -176,7 +190,7 @@
             // 
             this.btnMonitorRaceFiles.BackColor = System.Drawing.Color.Red;
             this.btnMonitorRaceFiles.Enabled = false;
-            this.btnMonitorRaceFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMonitorRaceFiles.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMonitorRaceFiles.ForeColor = System.Drawing.Color.White;
             this.btnMonitorRaceFiles.Location = new System.Drawing.Point(264, 29);
             this.btnMonitorRaceFiles.Name = "btnMonitorRaceFiles";
@@ -188,7 +202,8 @@
             // 
             // btnLoadEvents
             // 
-            this.btnLoadEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadEvents.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadEvents.ForeColor = System.Drawing.Color.White;
             this.btnLoadEvents.Location = new System.Drawing.Point(17, 29);
             this.btnLoadEvents.Name = "btnLoadEvents";
             this.btnLoadEvents.Size = new System.Drawing.Size(105, 48);
@@ -201,7 +216,7 @@
             // 
             this.btnHideScoreboardTopBar.BackColor = System.Drawing.Color.Red;
             this.btnHideScoreboardTopBar.Enabled = false;
-            this.btnHideScoreboardTopBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHideScoreboardTopBar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHideScoreboardTopBar.ForeColor = System.Drawing.Color.White;
             this.btnHideScoreboardTopBar.Location = new System.Drawing.Point(269, 29);
             this.btnHideScoreboardTopBar.Name = "btnHideScoreboardTopBar";
@@ -214,7 +229,7 @@
             // btnShowScoreboard
             // 
             this.btnShowScoreboard.BackColor = System.Drawing.Color.Red;
-            this.btnShowScoreboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowScoreboard.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowScoreboard.ForeColor = System.Drawing.Color.White;
             this.btnShowScoreboard.Location = new System.Drawing.Point(18, 29);
             this.btnShowScoreboard.Name = "btnShowScoreboard";
@@ -255,8 +270,9 @@
             this.lblLane1Time.Name = "lblLane1Time";
             this.lblLane1Time.Size = new System.Drawing.Size(193, 36);
             this.lblLane1Time.TabIndex = 3;
-            this.lblLane1Time.Text = "8:39.51";
+            this.lblLane1Time.Text = "9:24:07";
             this.lblLane1Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblLane1Time.Click += new System.EventHandler(this.lblLane1Time_Click);
             // 
             // lblLane1Name
             // 
@@ -267,7 +283,7 @@
             this.lblLane1Name.Name = "lblLane1Name";
             this.lblLane1Name.Size = new System.Drawing.Size(483, 37);
             this.lblLane1Name.TabIndex = 1;
-            this.lblLane1Name.Text = "Boaty McBoatface";
+            this.lblLane1Name.Text = "Will Laverty";
             this.lblLane1Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane1
@@ -284,7 +300,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Linen;
             this.label1.Location = new System.Drawing.Point(23, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 41);
@@ -294,7 +312,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Linen;
             this.label2.Location = new System.Drawing.Point(141, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 41);
@@ -332,7 +352,7 @@
             this.lblLane2Time.Name = "lblLane2Time";
             this.lblLane2Time.Size = new System.Drawing.Size(193, 36);
             this.lblLane2Time.TabIndex = 4;
-            this.lblLane2Time.Text = "8:39.51";
+            this.lblLane2Time.Text = "9:24:07";
             this.lblLane2Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane2Name
@@ -344,7 +364,7 @@
             this.lblLane2Name.Name = "lblLane2Name";
             this.lblLane2Name.Size = new System.Drawing.Size(483, 37);
             this.lblLane2Name.TabIndex = 1;
-            this.lblLane2Name.Text = "Boaty McBoatface";
+            this.lblLane2Name.Text = "Will Laverty";
             this.lblLane2Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane2
@@ -389,7 +409,7 @@
             this.lblLane3Time.Name = "lblLane3Time";
             this.lblLane3Time.Size = new System.Drawing.Size(193, 36);
             this.lblLane3Time.TabIndex = 4;
-            this.lblLane3Time.Text = "8:39.51";
+            this.lblLane3Time.Text = "9:24:07";
             this.lblLane3Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane3Name
@@ -401,7 +421,7 @@
             this.lblLane3Name.Name = "lblLane3Name";
             this.lblLane3Name.Size = new System.Drawing.Size(483, 37);
             this.lblLane3Name.TabIndex = 1;
-            this.lblLane3Name.Text = "Boaty McBoatface";
+            this.lblLane3Name.Text = "Will Laverty";
             this.lblLane3Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane3
@@ -446,7 +466,7 @@
             this.lblLane4Time.Name = "lblLane4Time";
             this.lblLane4Time.Size = new System.Drawing.Size(193, 36);
             this.lblLane4Time.TabIndex = 6;
-            this.lblLane4Time.Text = "8:39.51";
+            this.lblLane4Time.Text = "9:24:07";
             this.lblLane4Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane4Name
@@ -458,7 +478,7 @@
             this.lblLane4Name.Name = "lblLane4Name";
             this.lblLane4Name.Size = new System.Drawing.Size(483, 37);
             this.lblLane4Name.TabIndex = 1;
-            this.lblLane4Name.Text = "Boaty McBoatface";
+            this.lblLane4Name.Text = "Will Laverty";
             this.lblLane4Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane4
@@ -503,7 +523,7 @@
             this.lblLane5Time.Name = "lblLane5Time";
             this.lblLane5Time.Size = new System.Drawing.Size(193, 36);
             this.lblLane5Time.TabIndex = 6;
-            this.lblLane5Time.Text = "8:39.51";
+            this.lblLane5Time.Text = "9:24:07";
             this.lblLane5Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane5Name
@@ -515,7 +535,7 @@
             this.lblLane5Name.Name = "lblLane5Name";
             this.lblLane5Name.Size = new System.Drawing.Size(483, 37);
             this.lblLane5Name.TabIndex = 1;
-            this.lblLane5Name.Text = "Boaty McBoatface";
+            this.lblLane5Name.Text = "Will Laverty";
             this.lblLane5Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane5
@@ -560,7 +580,7 @@
             this.lblLane6Time.Name = "lblLane6Time";
             this.lblLane6Time.Size = new System.Drawing.Size(193, 36);
             this.lblLane6Time.TabIndex = 6;
-            this.lblLane6Time.Text = "8:39.51";
+            this.lblLane6Time.Text = "9:24:07";
             this.lblLane6Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane6Name
@@ -572,7 +592,7 @@
             this.lblLane6Name.Name = "lblLane6Name";
             this.lblLane6Name.Size = new System.Drawing.Size(483, 37);
             this.lblLane6Name.TabIndex = 1;
-            this.lblLane6Name.Text = "Boaty McBoatface";
+            this.lblLane6Name.Text = "Will Laverty";
             this.lblLane6Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane6
@@ -617,7 +637,7 @@
             this.lblLane7Time.Name = "lblLane7Time";
             this.lblLane7Time.Size = new System.Drawing.Size(193, 36);
             this.lblLane7Time.TabIndex = 6;
-            this.lblLane7Time.Text = "8:39.51";
+            this.lblLane7Time.Text = "9:24:07";
             this.lblLane7Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane7Name
@@ -629,7 +649,7 @@
             this.lblLane7Name.Name = "lblLane7Name";
             this.lblLane7Name.Size = new System.Drawing.Size(483, 37);
             this.lblLane7Name.TabIndex = 1;
-            this.lblLane7Name.Text = "Boaty McBoatface";
+            this.lblLane7Name.Text = "Will Laverty";
             this.lblLane7Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane7
@@ -674,7 +694,7 @@
             this.lblLane8Time.Name = "lblLane8Time";
             this.lblLane8Time.Size = new System.Drawing.Size(193, 36);
             this.lblLane8Time.TabIndex = 6;
-            this.lblLane8Time.Text = "8:39.51";
+            this.lblLane8Time.Text = "9:24:07";
             this.lblLane8Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane8Name
@@ -686,7 +706,7 @@
             this.lblLane8Name.Name = "lblLane8Name";
             this.lblLane8Name.Size = new System.Drawing.Size(483, 37);
             this.lblLane8Name.TabIndex = 1;
-            this.lblLane8Name.Text = "Boaty McBoatface";
+            this.lblLane8Name.Text = "Will Laverty";
             this.lblLane8Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane8
@@ -731,7 +751,7 @@
             this.lblLane9Time.Name = "lblLane9Time";
             this.lblLane9Time.Size = new System.Drawing.Size(193, 36);
             this.lblLane9Time.TabIndex = 6;
-            this.lblLane9Time.Text = "8:39.51";
+            this.lblLane9Time.Text = "9:24:07";
             this.lblLane9Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane9Name
@@ -743,7 +763,7 @@
             this.lblLane9Name.Name = "lblLane9Name";
             this.lblLane9Name.Size = new System.Drawing.Size(483, 37);
             this.lblLane9Name.TabIndex = 1;
-            this.lblLane9Name.Text = "Boaty McBoatface";
+            this.lblLane9Name.Text = "Will Laverty";
             this.lblLane9Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane9
@@ -760,7 +780,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Linen;
             this.label4.Location = new System.Drawing.Point(881, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 41);
@@ -770,7 +792,9 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Linen;
             this.label9.Location = new System.Drawing.Point(1049, 200);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(107, 41);
@@ -802,9 +826,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.btnHookRHQStopwatch);
             this.groupBox2.Controls.Add(this.btnShowScoreboard);
             this.groupBox2.Controls.Add(this.btnHideScoreboardTopBar);
+            this.groupBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.groupBox2.Location = new System.Drawing.Point(587, 723);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(391, 94);
@@ -814,7 +841,7 @@
             // 
             // btnHookRHQStopwatch
             // 
-            this.btnHookRHQStopwatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHookRHQStopwatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHookRHQStopwatch.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnHookRHQStopwatch.Location = new System.Drawing.Point(144, 29);
             this.btnHookRHQStopwatch.Name = "btnHookRHQStopwatch";
@@ -860,7 +887,7 @@
             this.lblLane10Time.Name = "lblLane10Time";
             this.lblLane10Time.Size = new System.Drawing.Size(193, 36);
             this.lblLane10Time.TabIndex = 6;
-            this.lblLane10Time.Text = "8:39.51";
+            this.lblLane10Time.Text = "9:24:07";
             this.lblLane10Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane10Name
@@ -872,7 +899,7 @@
             this.lblLane10Name.Name = "lblLane10Name";
             this.lblLane10Name.Size = new System.Drawing.Size(483, 37);
             this.lblLane10Name.TabIndex = 1;
-            this.lblLane10Name.Text = "Boaty McBoatface";
+            this.lblLane10Name.Text = "Will Laverty";
             this.lblLane10Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLane10
@@ -886,17 +913,6 @@
             this.lblLane10.Text = "10";
             this.lblLane10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnRaceHQFolder
-            // 
-            this.btnRaceHQFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRaceHQFolder.Location = new System.Drawing.Point(142, 29);
-            this.btnRaceHQFolder.Name = "btnRaceHQFolder";
-            this.btnRaceHQFolder.Size = new System.Drawing.Size(105, 48);
-            this.btnRaceHQFolder.TabIndex = 22;
-            this.btnRaceHQFolder.Text = "Select RaceHQ Folder";
-            this.btnRaceHQFolder.UseVisualStyleBackColor = true;
-            this.btnRaceHQFolder.Click += new System.EventHandler(this.btnRaceHQFolder_Click);
-            // 
             // lblFileMonitorWarning
             // 
             this.lblFileMonitorWarning.BackColor = System.Drawing.Color.Red;
@@ -909,7 +925,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 976);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(1178, 845);
             this.Controls.Add(this.pnlLane10);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnResetScoreboard);
@@ -991,7 +1008,6 @@
         private System.Windows.Forms.Label lblLane9Name;
         private System.Windows.Forms.Label lblLane9;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblLane1Place;
         private System.Windows.Forms.Label lblLane1Time;
         private System.Windows.Forms.Label lblLane2Place;
@@ -1026,6 +1042,7 @@
         private System.Windows.Forms.Label lblLane10;
         private System.Windows.Forms.Button btnRaceHQFolder;
         private System.Windows.Forms.Label lblFileMonitorWarning;
+        private System.Windows.Forms.Label label9;
     }
 }
 

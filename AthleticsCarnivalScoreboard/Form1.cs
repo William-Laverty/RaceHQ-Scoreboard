@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -62,6 +63,18 @@ namespace AthleticsCarnivalScoreboard
         public frmRaceCenter()
         {
             InitializeComponent();
+
+            // Background Color
+            this.BackColor = Color.FromArgb(245, 245, 245);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            using (LinearGradientBrush gradient = new LinearGradientBrush(this.ClientRectangle, Color.FromArgb(200, 160, 220), Color.OrangeRed, -90F))
+            {
+                e.Graphics.FillRectangle(gradient, this.ClientRectangle);
+            }
+            base.OnPaint(e);
         }
 
         private void frmRaceCenter_Load(object sender, EventArgs e)
@@ -930,6 +943,10 @@ namespace AthleticsCarnivalScoreboard
 
         }
 
+        private void lblLane1Time_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class Lane

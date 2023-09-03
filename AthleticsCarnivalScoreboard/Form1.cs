@@ -10,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 
 #pragma warning disable IDE1006
@@ -391,6 +392,7 @@ namespace AthleticsCarnivalScoreboard
             {
 
                 // Advance to the next event
+                OnRaceFinish(); // Save csv files
                 if (cmboEventList.SelectedIndex + 1 >= cmboEventList.Items.Count)
                 {
                     cmboEventList.SelectedIndex = 0;
@@ -947,6 +949,51 @@ namespace AthleticsCarnivalScoreboard
         {
 
         }
+
+        public List<RaceResult> GatherRaceResults()
+        {
+            List<RaceResult> raceResults = new List<RaceResult>();
+
+            for (int i = 0; i < nameLabelControlList.Count; i++)
+            {
+                RaceResult result = new RaceResult
+                {
+                    Lane = i + 1,
+                    Name = nameLabelControlList[i].Text,
+                    Time = timeLabelControlList[i].Text,
+                    Place = placeLabelControlList[i].Text
+                };
+                raceResults.Add(result);
+            }
+            return raceResults;
+        }
+
+        public string SerializeRaceResults(List<RaceResult> raceResults)
+        {
+            StringBuilder csvData = new StringBuilder();
+            csvData.AppendLine("Lane,Name,Time,Place");
+
+            foreach (var result in raceResults)
+            {
+                csvData.AppendLine($"{result.Lane},{result.Name},{result.Time},{result.Place}");
+            }
+            return csvData.ToString(); 
+        }
+
+        public void SaveRaceToFile(string data)
+        {
+            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            string filename = $"RaceResult_{timestamp}.csv";
+            string path = Path.Combine(Directory.GetCurrentDirectory(), filename);
+            File.WriteAllText(path, data );
+        }
+
+        public void OnRaceFinish()
+        {
+            List<RaceResult> raceResults = GatherRaceResults();
+            string serializedData = SerializeRaceResults(raceResults);
+            SaveRaceToFile(serializedData);
+        }
     }
 
     public class Lane
@@ -986,6 +1033,14 @@ namespace AthleticsCarnivalScoreboard
         public int lane { get; set; }
         public string race_time { get; set; }
         public int race_place { get; set; }
+    }
+
+    public class RaceResult
+    {
+        public int Lane { get; set; }
+        public string Name { get; set; }
+        public string Time { get; set; }
+        public string Place { get; set; }
     }
 
 }

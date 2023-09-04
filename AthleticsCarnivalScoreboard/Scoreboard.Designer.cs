@@ -86,9 +86,10 @@
             // 
             this.lblEventHeading.Font = new System.Drawing.Font("Arial", 57.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEventHeading.ForeColor = System.Drawing.Color.White;
-            this.lblEventHeading.Location = new System.Drawing.Point(12, 23);
+            this.lblEventHeading.Location = new System.Drawing.Point(32, 55);
+            this.lblEventHeading.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblEventHeading.Name = "lblEventHeading";
-            this.lblEventHeading.Size = new System.Drawing.Size(1880, 98);
+            this.lblEventHeading.Size = new System.Drawing.Size(5013, 234);
             this.lblEventHeading.TabIndex = 0;
             this.lblEventHeading.Text = "Event 5: Boys 16 years 800m (Div C)";
             this.lblEventHeading.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -99,18 +100,20 @@
             this.pnlPlace1.Controls.Add(this.lblPlace1Time);
             this.pnlPlace1.Controls.Add(this.lblPlace1Name);
             this.pnlPlace1.Controls.Add(this.lblPlace1);
-            this.pnlPlace1.Location = new System.Drawing.Point(12, 278);
+            this.pnlPlace1.Location = new System.Drawing.Point(32, 663);
+            this.pnlPlace1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlPlace1.Name = "pnlPlace1";
-            this.pnlPlace1.Size = new System.Drawing.Size(1880, 70);
+            this.pnlPlace1.Size = new System.Drawing.Size(5013, 167);
             this.pnlPlace1.TabIndex = 6;
             // 
             // lblPlace1Time
             // 
             this.lblPlace1Time.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace1Time.ForeColor = System.Drawing.Color.White;
-            this.lblPlace1Time.Location = new System.Drawing.Point(1543, -6);
+            this.lblPlace1Time.Location = new System.Drawing.Point(4115, -14);
+            this.lblPlace1Time.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace1Time.Name = "lblPlace1Time";
-            this.lblPlace1Time.Size = new System.Drawing.Size(334, 82);
+            this.lblPlace1Time.Size = new System.Drawing.Size(891, 196);
             this.lblPlace1Time.TabIndex = 3;
             this.lblPlace1Time.Text = "8:39.51";
             this.lblPlace1Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -120,9 +123,10 @@
             this.lblPlace1Name.AutoEllipsis = true;
             this.lblPlace1Name.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace1Name.ForeColor = System.Drawing.Color.White;
-            this.lblPlace1Name.Location = new System.Drawing.Point(120, -6);
+            this.lblPlace1Name.Location = new System.Drawing.Point(320, -14);
+            this.lblPlace1Name.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace1Name.Name = "lblPlace1Name";
-            this.lblPlace1Name.Size = new System.Drawing.Size(1010, 82);
+            this.lblPlace1Name.Size = new System.Drawing.Size(2693, 196);
             this.lblPlace1Name.TabIndex = 1;
             this.lblPlace1Name.Text = "Boaty McBoatface";
             this.lblPlace1Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,9 +135,10 @@
             // 
             this.lblPlace1.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace1.ForeColor = System.Drawing.Color.White;
-            this.lblPlace1.Location = new System.Drawing.Point(0, -6);
+            this.lblPlace1.Location = new System.Drawing.Point(0, -14);
+            this.lblPlace1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace1.Name = "lblPlace1";
-            this.lblPlace1.Size = new System.Drawing.Size(100, 82);
+            this.lblPlace1.Size = new System.Drawing.Size(267, 196);
             this.lblPlace1.TabIndex = 0;
             this.lblPlace1.Text = "1";
             this.lblPlace1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -144,18 +149,20 @@
             this.pnlPlace2.Controls.Add(this.lblPlace2Time);
             this.pnlPlace2.Controls.Add(this.lblPlace2Name);
             this.pnlPlace2.Controls.Add(this.lblPlace2);
-            this.pnlPlace2.Location = new System.Drawing.Point(12, 348);
+            this.pnlPlace2.Location = new System.Drawing.Point(32, 830);
+            this.pnlPlace2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlPlace2.Name = "pnlPlace2";
-            this.pnlPlace2.Size = new System.Drawing.Size(1880, 70);
+            this.pnlPlace2.Size = new System.Drawing.Size(5013, 167);
             this.pnlPlace2.TabIndex = 7;
             // 
             // lblPlace2Time
             // 
             this.lblPlace2Time.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace2Time.ForeColor = System.Drawing.Color.White;
-            this.lblPlace2Time.Location = new System.Drawing.Point(1543, -6);
+            this.lblPlace2Time.Location = new System.Drawing.Point(4115, -14);
+            this.lblPlace2Time.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace2Time.Name = "lblPlace2Time";
-            this.lblPlace2Time.Size = new System.Drawing.Size(334, 82);
+            this.lblPlace2Time.Size = new System.Drawing.Size(891, 196);
             this.lblPlace2Time.TabIndex = 3;
             this.lblPlace2Time.Text = "8:39.51";
             this.lblPlace2Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -165,9 +172,10 @@
             this.lblPlace2Name.AutoEllipsis = true;
             this.lblPlace2Name.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace2Name.ForeColor = System.Drawing.Color.White;
-            this.lblPlace2Name.Location = new System.Drawing.Point(120, -6);
+            this.lblPlace2Name.Location = new System.Drawing.Point(320, -14);
+            this.lblPlace2Name.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace2Name.Name = "lblPlace2Name";
-            this.lblPlace2Name.Size = new System.Drawing.Size(1010, 82);
+            this.lblPlace2Name.Size = new System.Drawing.Size(2693, 196);
             this.lblPlace2Name.TabIndex = 1;
             this.lblPlace2Name.Text = "Boaty McBoatface";
             this.lblPlace2Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,9 +184,10 @@
             // 
             this.lblPlace2.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace2.ForeColor = System.Drawing.Color.White;
-            this.lblPlace2.Location = new System.Drawing.Point(0, -6);
+            this.lblPlace2.Location = new System.Drawing.Point(0, -14);
+            this.lblPlace2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace2.Name = "lblPlace2";
-            this.lblPlace2.Size = new System.Drawing.Size(100, 82);
+            this.lblPlace2.Size = new System.Drawing.Size(267, 196);
             this.lblPlace2.TabIndex = 0;
             this.lblPlace2.Text = "1";
             this.lblPlace2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -189,18 +198,20 @@
             this.pnlPlace3.Controls.Add(this.lblPlace3Time);
             this.pnlPlace3.Controls.Add(this.lblPlace3Name);
             this.pnlPlace3.Controls.Add(this.lblPlace3);
-            this.pnlPlace3.Location = new System.Drawing.Point(12, 418);
+            this.pnlPlace3.Location = new System.Drawing.Point(32, 997);
+            this.pnlPlace3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlPlace3.Name = "pnlPlace3";
-            this.pnlPlace3.Size = new System.Drawing.Size(1880, 70);
+            this.pnlPlace3.Size = new System.Drawing.Size(5013, 167);
             this.pnlPlace3.TabIndex = 8;
             // 
             // lblPlace3Time
             // 
             this.lblPlace3Time.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace3Time.ForeColor = System.Drawing.Color.White;
-            this.lblPlace3Time.Location = new System.Drawing.Point(1543, -6);
+            this.lblPlace3Time.Location = new System.Drawing.Point(4115, -14);
+            this.lblPlace3Time.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace3Time.Name = "lblPlace3Time";
-            this.lblPlace3Time.Size = new System.Drawing.Size(334, 82);
+            this.lblPlace3Time.Size = new System.Drawing.Size(891, 196);
             this.lblPlace3Time.TabIndex = 3;
             this.lblPlace3Time.Text = "8:39.51";
             this.lblPlace3Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -210,9 +221,10 @@
             this.lblPlace3Name.AutoEllipsis = true;
             this.lblPlace3Name.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace3Name.ForeColor = System.Drawing.Color.White;
-            this.lblPlace3Name.Location = new System.Drawing.Point(120, -6);
+            this.lblPlace3Name.Location = new System.Drawing.Point(320, -14);
+            this.lblPlace3Name.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace3Name.Name = "lblPlace3Name";
-            this.lblPlace3Name.Size = new System.Drawing.Size(1010, 82);
+            this.lblPlace3Name.Size = new System.Drawing.Size(2693, 196);
             this.lblPlace3Name.TabIndex = 1;
             this.lblPlace3Name.Text = "Boaty McBoatface";
             this.lblPlace3Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,9 +233,10 @@
             // 
             this.lblPlace3.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace3.ForeColor = System.Drawing.Color.White;
-            this.lblPlace3.Location = new System.Drawing.Point(0, -6);
+            this.lblPlace3.Location = new System.Drawing.Point(0, -14);
+            this.lblPlace3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace3.Name = "lblPlace3";
-            this.lblPlace3.Size = new System.Drawing.Size(100, 82);
+            this.lblPlace3.Size = new System.Drawing.Size(267, 196);
             this.lblPlace3.TabIndex = 0;
             this.lblPlace3.Text = "1";
             this.lblPlace3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -234,18 +247,20 @@
             this.pnlPlace4.Controls.Add(this.lblPlace4Time);
             this.pnlPlace4.Controls.Add(this.lblPlace4Name);
             this.pnlPlace4.Controls.Add(this.lblPlace4);
-            this.pnlPlace4.Location = new System.Drawing.Point(12, 488);
+            this.pnlPlace4.Location = new System.Drawing.Point(32, 1164);
+            this.pnlPlace4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlPlace4.Name = "pnlPlace4";
-            this.pnlPlace4.Size = new System.Drawing.Size(1880, 70);
+            this.pnlPlace4.Size = new System.Drawing.Size(5013, 167);
             this.pnlPlace4.TabIndex = 9;
             // 
             // lblPlace4Time
             // 
             this.lblPlace4Time.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace4Time.ForeColor = System.Drawing.Color.White;
-            this.lblPlace4Time.Location = new System.Drawing.Point(1543, -6);
+            this.lblPlace4Time.Location = new System.Drawing.Point(4115, -14);
+            this.lblPlace4Time.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace4Time.Name = "lblPlace4Time";
-            this.lblPlace4Time.Size = new System.Drawing.Size(334, 82);
+            this.lblPlace4Time.Size = new System.Drawing.Size(891, 196);
             this.lblPlace4Time.TabIndex = 3;
             this.lblPlace4Time.Text = "8:39.51";
             this.lblPlace4Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -255,9 +270,10 @@
             this.lblPlace4Name.AutoEllipsis = true;
             this.lblPlace4Name.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace4Name.ForeColor = System.Drawing.Color.White;
-            this.lblPlace4Name.Location = new System.Drawing.Point(120, -6);
+            this.lblPlace4Name.Location = new System.Drawing.Point(320, -14);
+            this.lblPlace4Name.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace4Name.Name = "lblPlace4Name";
-            this.lblPlace4Name.Size = new System.Drawing.Size(1010, 82);
+            this.lblPlace4Name.Size = new System.Drawing.Size(2693, 196);
             this.lblPlace4Name.TabIndex = 1;
             this.lblPlace4Name.Text = "Boaty McBoatface";
             this.lblPlace4Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,9 +282,10 @@
             // 
             this.lblPlace4.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace4.ForeColor = System.Drawing.Color.White;
-            this.lblPlace4.Location = new System.Drawing.Point(0, -6);
+            this.lblPlace4.Location = new System.Drawing.Point(0, -14);
+            this.lblPlace4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace4.Name = "lblPlace4";
-            this.lblPlace4.Size = new System.Drawing.Size(100, 82);
+            this.lblPlace4.Size = new System.Drawing.Size(267, 196);
             this.lblPlace4.TabIndex = 0;
             this.lblPlace4.Text = "1";
             this.lblPlace4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,18 +296,20 @@
             this.pnlPlace8.Controls.Add(this.lblPlace8Time);
             this.pnlPlace8.Controls.Add(this.lblPlace8Name);
             this.pnlPlace8.Controls.Add(this.lblPlace8);
-            this.pnlPlace8.Location = new System.Drawing.Point(12, 768);
+            this.pnlPlace8.Location = new System.Drawing.Point(32, 1831);
+            this.pnlPlace8.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlPlace8.Name = "pnlPlace8";
-            this.pnlPlace8.Size = new System.Drawing.Size(1880, 70);
+            this.pnlPlace8.Size = new System.Drawing.Size(5013, 167);
             this.pnlPlace8.TabIndex = 13;
             // 
             // lblPlace8Time
             // 
             this.lblPlace8Time.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace8Time.ForeColor = System.Drawing.Color.White;
-            this.lblPlace8Time.Location = new System.Drawing.Point(1543, -6);
+            this.lblPlace8Time.Location = new System.Drawing.Point(4115, -14);
+            this.lblPlace8Time.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace8Time.Name = "lblPlace8Time";
-            this.lblPlace8Time.Size = new System.Drawing.Size(334, 82);
+            this.lblPlace8Time.Size = new System.Drawing.Size(891, 196);
             this.lblPlace8Time.TabIndex = 3;
             this.lblPlace8Time.Text = "8:39.51";
             this.lblPlace8Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -300,9 +319,10 @@
             this.lblPlace8Name.AutoEllipsis = true;
             this.lblPlace8Name.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace8Name.ForeColor = System.Drawing.Color.White;
-            this.lblPlace8Name.Location = new System.Drawing.Point(120, -6);
+            this.lblPlace8Name.Location = new System.Drawing.Point(320, -14);
+            this.lblPlace8Name.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace8Name.Name = "lblPlace8Name";
-            this.lblPlace8Name.Size = new System.Drawing.Size(1010, 82);
+            this.lblPlace8Name.Size = new System.Drawing.Size(2693, 196);
             this.lblPlace8Name.TabIndex = 1;
             this.lblPlace8Name.Text = "Boaty McBoatface";
             this.lblPlace8Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,9 +331,10 @@
             // 
             this.lblPlace8.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace8.ForeColor = System.Drawing.Color.White;
-            this.lblPlace8.Location = new System.Drawing.Point(0, -6);
+            this.lblPlace8.Location = new System.Drawing.Point(0, -14);
+            this.lblPlace8.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace8.Name = "lblPlace8";
-            this.lblPlace8.Size = new System.Drawing.Size(100, 82);
+            this.lblPlace8.Size = new System.Drawing.Size(267, 196);
             this.lblPlace8.TabIndex = 0;
             this.lblPlace8.Text = "1";
             this.lblPlace8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -324,18 +345,20 @@
             this.pnlPlace7.Controls.Add(this.lblPlace7Time);
             this.pnlPlace7.Controls.Add(this.lblPlace7Name);
             this.pnlPlace7.Controls.Add(this.lblPlace7);
-            this.pnlPlace7.Location = new System.Drawing.Point(12, 698);
+            this.pnlPlace7.Location = new System.Drawing.Point(32, 1664);
+            this.pnlPlace7.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlPlace7.Name = "pnlPlace7";
-            this.pnlPlace7.Size = new System.Drawing.Size(1880, 70);
+            this.pnlPlace7.Size = new System.Drawing.Size(5013, 167);
             this.pnlPlace7.TabIndex = 12;
             // 
             // lblPlace7Time
             // 
             this.lblPlace7Time.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace7Time.ForeColor = System.Drawing.Color.White;
-            this.lblPlace7Time.Location = new System.Drawing.Point(1543, -6);
+            this.lblPlace7Time.Location = new System.Drawing.Point(4115, -14);
+            this.lblPlace7Time.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace7Time.Name = "lblPlace7Time";
-            this.lblPlace7Time.Size = new System.Drawing.Size(334, 82);
+            this.lblPlace7Time.Size = new System.Drawing.Size(891, 196);
             this.lblPlace7Time.TabIndex = 3;
             this.lblPlace7Time.Text = "8:39.51";
             this.lblPlace7Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -345,9 +368,10 @@
             this.lblPlace7Name.AutoEllipsis = true;
             this.lblPlace7Name.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace7Name.ForeColor = System.Drawing.Color.White;
-            this.lblPlace7Name.Location = new System.Drawing.Point(120, -6);
+            this.lblPlace7Name.Location = new System.Drawing.Point(320, -14);
+            this.lblPlace7Name.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace7Name.Name = "lblPlace7Name";
-            this.lblPlace7Name.Size = new System.Drawing.Size(1010, 82);
+            this.lblPlace7Name.Size = new System.Drawing.Size(2693, 196);
             this.lblPlace7Name.TabIndex = 1;
             this.lblPlace7Name.Text = "Boaty McBoatface";
             this.lblPlace7Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -356,9 +380,10 @@
             // 
             this.lblPlace7.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace7.ForeColor = System.Drawing.Color.White;
-            this.lblPlace7.Location = new System.Drawing.Point(0, -6);
+            this.lblPlace7.Location = new System.Drawing.Point(0, -14);
+            this.lblPlace7.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace7.Name = "lblPlace7";
-            this.lblPlace7.Size = new System.Drawing.Size(100, 82);
+            this.lblPlace7.Size = new System.Drawing.Size(267, 196);
             this.lblPlace7.TabIndex = 0;
             this.lblPlace7.Text = "1";
             this.lblPlace7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -369,18 +394,20 @@
             this.pnlPlace6.Controls.Add(this.lblPlace6Time);
             this.pnlPlace6.Controls.Add(this.lblPlace6Name);
             this.pnlPlace6.Controls.Add(this.lblPlace6);
-            this.pnlPlace6.Location = new System.Drawing.Point(12, 628);
+            this.pnlPlace6.Location = new System.Drawing.Point(32, 1498);
+            this.pnlPlace6.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlPlace6.Name = "pnlPlace6";
-            this.pnlPlace6.Size = new System.Drawing.Size(1880, 70);
+            this.pnlPlace6.Size = new System.Drawing.Size(5013, 167);
             this.pnlPlace6.TabIndex = 11;
             // 
             // lblPlace6Time
             // 
             this.lblPlace6Time.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace6Time.ForeColor = System.Drawing.Color.White;
-            this.lblPlace6Time.Location = new System.Drawing.Point(1543, -6);
+            this.lblPlace6Time.Location = new System.Drawing.Point(4115, -14);
+            this.lblPlace6Time.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace6Time.Name = "lblPlace6Time";
-            this.lblPlace6Time.Size = new System.Drawing.Size(334, 82);
+            this.lblPlace6Time.Size = new System.Drawing.Size(891, 196);
             this.lblPlace6Time.TabIndex = 3;
             this.lblPlace6Time.Text = "8:39.51";
             this.lblPlace6Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -390,9 +417,10 @@
             this.lblPlace6Name.AutoEllipsis = true;
             this.lblPlace6Name.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace6Name.ForeColor = System.Drawing.Color.White;
-            this.lblPlace6Name.Location = new System.Drawing.Point(120, -6);
+            this.lblPlace6Name.Location = new System.Drawing.Point(320, -14);
+            this.lblPlace6Name.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace6Name.Name = "lblPlace6Name";
-            this.lblPlace6Name.Size = new System.Drawing.Size(1010, 82);
+            this.lblPlace6Name.Size = new System.Drawing.Size(2693, 196);
             this.lblPlace6Name.TabIndex = 1;
             this.lblPlace6Name.Text = "Boaty McBoatface";
             this.lblPlace6Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -401,9 +429,10 @@
             // 
             this.lblPlace6.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace6.ForeColor = System.Drawing.Color.White;
-            this.lblPlace6.Location = new System.Drawing.Point(0, -6);
+            this.lblPlace6.Location = new System.Drawing.Point(0, -14);
+            this.lblPlace6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace6.Name = "lblPlace6";
-            this.lblPlace6.Size = new System.Drawing.Size(100, 82);
+            this.lblPlace6.Size = new System.Drawing.Size(267, 196);
             this.lblPlace6.TabIndex = 0;
             this.lblPlace6.Text = "1";
             this.lblPlace6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -414,18 +443,20 @@
             this.pnlPlace5.Controls.Add(this.lblPlace5Time);
             this.pnlPlace5.Controls.Add(this.lblPlace5Name);
             this.pnlPlace5.Controls.Add(this.lblPlace5);
-            this.pnlPlace5.Location = new System.Drawing.Point(12, 558);
+            this.pnlPlace5.Location = new System.Drawing.Point(32, 1331);
+            this.pnlPlace5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlPlace5.Name = "pnlPlace5";
-            this.pnlPlace5.Size = new System.Drawing.Size(1880, 70);
+            this.pnlPlace5.Size = new System.Drawing.Size(5013, 167);
             this.pnlPlace5.TabIndex = 10;
             // 
             // lblPlace5Time
             // 
             this.lblPlace5Time.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace5Time.ForeColor = System.Drawing.Color.White;
-            this.lblPlace5Time.Location = new System.Drawing.Point(1543, -6);
+            this.lblPlace5Time.Location = new System.Drawing.Point(4115, -14);
+            this.lblPlace5Time.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace5Time.Name = "lblPlace5Time";
-            this.lblPlace5Time.Size = new System.Drawing.Size(334, 82);
+            this.lblPlace5Time.Size = new System.Drawing.Size(891, 196);
             this.lblPlace5Time.TabIndex = 3;
             this.lblPlace5Time.Text = "8:39.51";
             this.lblPlace5Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -435,9 +466,10 @@
             this.lblPlace5Name.AutoEllipsis = true;
             this.lblPlace5Name.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace5Name.ForeColor = System.Drawing.Color.White;
-            this.lblPlace5Name.Location = new System.Drawing.Point(120, -6);
+            this.lblPlace5Name.Location = new System.Drawing.Point(320, -14);
+            this.lblPlace5Name.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace5Name.Name = "lblPlace5Name";
-            this.lblPlace5Name.Size = new System.Drawing.Size(1010, 82);
+            this.lblPlace5Name.Size = new System.Drawing.Size(2693, 196);
             this.lblPlace5Name.TabIndex = 1;
             this.lblPlace5Name.Text = "Boaty McBoatface";
             this.lblPlace5Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -446,9 +478,10 @@
             // 
             this.lblPlace5.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace5.ForeColor = System.Drawing.Color.White;
-            this.lblPlace5.Location = new System.Drawing.Point(0, -6);
+            this.lblPlace5.Location = new System.Drawing.Point(0, -14);
+            this.lblPlace5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace5.Name = "lblPlace5";
-            this.lblPlace5.Size = new System.Drawing.Size(100, 82);
+            this.lblPlace5.Size = new System.Drawing.Size(267, 196);
             this.lblPlace5.TabIndex = 0;
             this.lblPlace5.Text = "1";
             this.lblPlace5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -459,18 +492,20 @@
             this.pnlPlace9.Controls.Add(this.lblPlace9Time);
             this.pnlPlace9.Controls.Add(this.lblPlace9Name);
             this.pnlPlace9.Controls.Add(this.lblPlace9);
-            this.pnlPlace9.Location = new System.Drawing.Point(12, 838);
+            this.pnlPlace9.Location = new System.Drawing.Point(32, 1998);
+            this.pnlPlace9.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlPlace9.Name = "pnlPlace9";
-            this.pnlPlace9.Size = new System.Drawing.Size(1880, 70);
+            this.pnlPlace9.Size = new System.Drawing.Size(5013, 167);
             this.pnlPlace9.TabIndex = 14;
             // 
             // lblPlace9Time
             // 
             this.lblPlace9Time.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace9Time.ForeColor = System.Drawing.Color.White;
-            this.lblPlace9Time.Location = new System.Drawing.Point(1543, -6);
+            this.lblPlace9Time.Location = new System.Drawing.Point(4115, -14);
+            this.lblPlace9Time.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace9Time.Name = "lblPlace9Time";
-            this.lblPlace9Time.Size = new System.Drawing.Size(334, 82);
+            this.lblPlace9Time.Size = new System.Drawing.Size(891, 196);
             this.lblPlace9Time.TabIndex = 3;
             this.lblPlace9Time.Text = "8:39.51";
             this.lblPlace9Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -480,9 +515,10 @@
             this.lblPlace9Name.AutoEllipsis = true;
             this.lblPlace9Name.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace9Name.ForeColor = System.Drawing.Color.White;
-            this.lblPlace9Name.Location = new System.Drawing.Point(120, -6);
+            this.lblPlace9Name.Location = new System.Drawing.Point(320, -14);
+            this.lblPlace9Name.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace9Name.Name = "lblPlace9Name";
-            this.lblPlace9Name.Size = new System.Drawing.Size(1010, 82);
+            this.lblPlace9Name.Size = new System.Drawing.Size(2693, 196);
             this.lblPlace9Name.TabIndex = 1;
             this.lblPlace9Name.Text = "Boaty McBoatface";
             this.lblPlace9Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -491,9 +527,10 @@
             // 
             this.lblPlace9.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace9.ForeColor = System.Drawing.Color.White;
-            this.lblPlace9.Location = new System.Drawing.Point(0, -6);
+            this.lblPlace9.Location = new System.Drawing.Point(0, -14);
+            this.lblPlace9.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace9.Name = "lblPlace9";
-            this.lblPlace9.Size = new System.Drawing.Size(100, 82);
+            this.lblPlace9.Size = new System.Drawing.Size(267, 196);
             this.lblPlace9.TabIndex = 0;
             this.lblPlace9.Text = "1";
             this.lblPlace9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -502,9 +539,10 @@
             // 
             this.lblStopwatch.Font = new System.Drawing.Font("Arial", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStopwatch.ForeColor = System.Drawing.Color.Yellow;
-            this.lblStopwatch.Location = new System.Drawing.Point(1211, 124);
+            this.lblStopwatch.Location = new System.Drawing.Point(1961, 289);
+            this.lblStopwatch.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblStopwatch.Name = "lblStopwatch";
-            this.lblStopwatch.Size = new System.Drawing.Size(684, 133);
+            this.lblStopwatch.Size = new System.Drawing.Size(1824, 317);
             this.lblStopwatch.TabIndex = 15;
             this.lblStopwatch.Text = "00:00:00.0";
             this.lblStopwatch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -515,18 +553,20 @@
             this.pnlPlace10.Controls.Add(this.lblPlace10Time);
             this.pnlPlace10.Controls.Add(this.lblPlace10Name);
             this.pnlPlace10.Controls.Add(this.lblPlace10);
-            this.pnlPlace10.Location = new System.Drawing.Point(12, 908);
+            this.pnlPlace10.Location = new System.Drawing.Point(32, 2165);
+            this.pnlPlace10.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlPlace10.Name = "pnlPlace10";
-            this.pnlPlace10.Size = new System.Drawing.Size(1880, 70);
+            this.pnlPlace10.Size = new System.Drawing.Size(5013, 167);
             this.pnlPlace10.TabIndex = 15;
             // 
             // lblPlace10Time
             // 
             this.lblPlace10Time.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace10Time.ForeColor = System.Drawing.Color.White;
-            this.lblPlace10Time.Location = new System.Drawing.Point(1543, -6);
+            this.lblPlace10Time.Location = new System.Drawing.Point(4115, -14);
+            this.lblPlace10Time.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace10Time.Name = "lblPlace10Time";
-            this.lblPlace10Time.Size = new System.Drawing.Size(334, 82);
+            this.lblPlace10Time.Size = new System.Drawing.Size(891, 196);
             this.lblPlace10Time.TabIndex = 3;
             this.lblPlace10Time.Text = "8:39.51";
             this.lblPlace10Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -536,9 +576,10 @@
             this.lblPlace10Name.AutoEllipsis = true;
             this.lblPlace10Name.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace10Name.ForeColor = System.Drawing.Color.White;
-            this.lblPlace10Name.Location = new System.Drawing.Point(120, -6);
+            this.lblPlace10Name.Location = new System.Drawing.Point(320, -14);
+            this.lblPlace10Name.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace10Name.Name = "lblPlace10Name";
-            this.lblPlace10Name.Size = new System.Drawing.Size(1010, 82);
+            this.lblPlace10Name.Size = new System.Drawing.Size(2693, 196);
             this.lblPlace10Name.TabIndex = 1;
             this.lblPlace10Name.Text = "Boaty McBoatface";
             this.lblPlace10Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -547,19 +588,20 @@
             // 
             this.lblPlace10.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlace10.ForeColor = System.Drawing.Color.White;
-            this.lblPlace10.Location = new System.Drawing.Point(0, -6);
+            this.lblPlace10.Location = new System.Drawing.Point(0, -14);
+            this.lblPlace10.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblPlace10.Name = "lblPlace10";
-            this.lblPlace10.Size = new System.Drawing.Size(100, 82);
+            this.lblPlace10.Size = new System.Drawing.Size(267, 196);
             this.lblPlace10.TabIndex = 0;
             this.lblPlace10.Text = "1";
             this.lblPlace10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Scoreboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(3844, 2108);
             this.ControlBox = false;
             this.Controls.Add(this.pnlPlace10);
             this.Controls.Add(this.lblStopwatch);
@@ -574,6 +616,7 @@
             this.Controls.Add(this.pnlPlace1);
             this.Controls.Add(this.lblEventHeading);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.MaximizeBox = false;
             this.Name = "Scoreboard";
             this.Text = "Scoreboard";

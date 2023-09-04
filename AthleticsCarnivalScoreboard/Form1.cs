@@ -980,35 +980,32 @@ namespace AthleticsCarnivalScoreboard
             return csvData.ToString(); 
         }
 
-        //File Manager
         public void SaveRaceToFile(string data)
         {
-            // Get the path to the desktop for the current user
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            // Define the specific folder name you want on the desktop
-            string folderName = "RaceResults";
-
-            // Combine the desktop path and folder name to get the full path
+            string folderName = "PreviousResults";
             string folderPath = Path.Combine(desktopPath, folderName);
 
-            // Check if the folder exists; if not, create it
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
             }
 
-            // Generate the filename based on the current timestamp
-            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-            string filename = $"RaceResult_{timestamp}.csv";
+            string eventName = GetCurrentEventName();
+            string validFilename = string.Join("_", eventName.Split(Path.GetInvalidFileNameChars()));
+            string filename = $"{validFilename}.csv";
 
-            // Combine the folder path and filename to get the full file path
+            // string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            // string filename = $"RaceResult_{timestamp}.csv";
+
             string filePath = Path.Combine(folderPath, filename);
-
-            // Save the data to the file
-            File.WriteAllText(filePath, data);
+            File.WriteAllText(filePath, data );
         }
 
+        public string GetCurrentEventName()
+        {
+            return cmboEventList.Text;
+        }
 
         public void OnRaceFinish()
         {

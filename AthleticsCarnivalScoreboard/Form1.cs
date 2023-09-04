@@ -999,7 +999,7 @@ namespace AthleticsCarnivalScoreboard
             // string filename = $"RaceResult_{timestamp}.csv";
 
             string filePath = Path.Combine(folderPath, filename);
-            File.WriteAllText(filePath, data );
+            File.WriteAllText(filePath, data);
         }
 
         public string GetCurrentEventName()

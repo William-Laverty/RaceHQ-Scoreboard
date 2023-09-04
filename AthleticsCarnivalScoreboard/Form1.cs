@@ -861,10 +861,11 @@ namespace AthleticsCarnivalScoreboard
 
         private void btnShowScoreboard_Click(object sender, EventArgs e)
         {
-
+            Scoreboard scoreboardForm = new Scoreboard();
+            scoreboardForm.Show();
             // Update the flag
             theScoreboardVisible = !theScoreboardVisible;
-
+        
             // Update the button
             btnShowScoreboard.Text = (theScoreboardVisible ? "Hide Scoreboard" : "Show Scoreboard");
             btnShowScoreboard.BackColor = (theScoreboardVisible ? Color.Green : Color.Red);

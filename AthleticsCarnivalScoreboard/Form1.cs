@@ -983,10 +983,29 @@ namespace AthleticsCarnivalScoreboard
 
         public void SaveRaceToFile(string data)
         {
-            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-            string filename = $"RaceResult_{timestamp}.csv";
-            string path = Path.Combine(Directory.GetCurrentDirectory(), filename);
-            File.WriteAllText(path, data );
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string folderName = "PreviousResults";
+            string folderPath = Path.Combine(desktopPath, folderName);
+
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            string eventName = GetCurrentEventName();
+            string validFilename = string.Join("_", eventName.Split(Path.GetInvalidFileNameChars()));
+            string filename = $"{validFilename}.csv";
+
+            // string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            // string filename = $"RaceResult_{timestamp}.csv";
+
+            string filePath = Path.Combine(folderPath, filename);
+            File.WriteAllText(filePath, data);
+        }
+
+        public string GetCurrentEventName()
+        {
+            return cmboEventList.Text;
         }
 
         public void OnRaceFinish()

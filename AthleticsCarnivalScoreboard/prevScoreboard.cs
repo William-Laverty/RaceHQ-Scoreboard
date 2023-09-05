@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using AthleticsCarnivalScoreboard;
 
 #pragma warning disable IDE1006
@@ -57,6 +58,8 @@ namespace AthleticsCarnivalScoreboard
             // Clear the scoreboard
             clearScoreboardFull();
 
+            LoadPreviousRaceResults();
+
         }
 
         public void clearScoreboardFull()
@@ -99,6 +102,67 @@ namespace AthleticsCarnivalScoreboard
                     nameLabelControlList[i].Text = "";
                     timeLabelControlList[i].Text = "";
                 }
+            }
+        }
+
+        public string GetMostRecentRaceFile()
+        {
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string folderPath = Path.Combine(desktopPath, "PreviousResults");
+
+            if (!Directory.Exists(folderPath))
+            {
+                MessageBox.Show("The 'PreviousResults' folder does not exist on the desktop.");
+                return null;
+            }
+
+            var csvFiles = Directory.GetFiles(folderPath, "*.csv");
+
+            if (csvFiles.Length == 0)
+            {
+                MessageBox.Show("No CSV files found in the 'PreviousResults' folder.");
+                return null;
+            }
+
+            return csvFiles.OrderByDescending(f => File.GetCreationTime(f)).FirstOrDefault();
+        }
+
+        public List<RaceResult> ParseCSVContent(string filePath)
+        {
+            List<RaceResult> results = new List<RaceResult>();
+            string[] lines = File.ReadAllLines(filePath);
+
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string[] columns = lines[i].Split(',');
+                results.Add(new RaceResult {
+                    Lane = int.Parse(columns[0]),
+                    Name = columns[1],
+                    Time = columns[2],
+                    Place = columns[3]
+                });
+            }
+            return results;
+        }
+
+        public void DisplayResultsOnScoreboard(List<RaceResult> raceResults)
+        {
+            for (int i = 0; i < raceResults.Count; i++)
+            {
+                nameLabelControlList[i].Text = raceResults[i].Name;
+                timeLabelControlList[i].Text = raceResults[i].Time;
+                placeLabelControlList[i].Text = raceResults[i].Place;
+            }
+        }
+
+        public void LoadPreviousRaceResults()
+        {
+            string mostRecentRaceFile = GetMostRecentRaceFile();
+
+            if (!string.IsNullOrEmpty(mostRecentRaceFile))
+            {
+                List<RaceResult> raceResults = ParseCSVContent(mostRecentRaceFile);
+                DisplayResultsOnScoreboard(raceResults);
             }
         }
 

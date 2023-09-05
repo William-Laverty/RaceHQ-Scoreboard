@@ -37,6 +37,10 @@ namespace AthleticsCarnivalScoreboard
         public prevScoreboard()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
         }
 
         private void Scoreboard_Load(object sender, EventArgs e)

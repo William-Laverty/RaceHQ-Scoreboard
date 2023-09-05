@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using AthleticsCarnivalScoreboard;
+using static AthleticsCarnivalScoreboard.frmRaceCenter;
 
 #pragma warning disable IDE1006
 #pragma warning disable IDE0017
@@ -150,6 +151,12 @@ namespace AthleticsCarnivalScoreboard
             for (int i = 0; i < raceResults.Count; i++)
             {
                 nameLabelControlList[i].Text = raceResults[i].Name;
+                var houseColorData = houseColors.FirstOrDefault(h => h.HouseName == raceResults[i].Name);
+                if (houseColorData != null)
+                {
+                    nameLabelControlList[i].ForeColor = ColorTranslator.FromHtml($"#{houseColorData.TextColor}");
+                    nameLabelControlList[i].BackColor = ColorTranslator.FromHtml($"#{houseColorData.HouseColor}");
+                }
                 timeLabelControlList[i].Text = raceResults[i].Time;
                 placeLabelControlList[i].Text = raceResults[i].Place;
             }
@@ -165,6 +172,28 @@ namespace AthleticsCarnivalScoreboard
                 DisplayResultsOnScoreboard(raceResults);
             }
         }
+
+        public class HouseColorData
+        {
+            public string HouseName { get; set; }
+            public string HouseColor { get; set; }
+            public string TextColor { get; set; }
+        }
+
+        List<HouseColorData> houseColors = new List<HouseColorData>
+        {
+            new HouseColorData { HouseName = "Burgmann", HouseColor = "fbc628", TextColor = "000000" },
+            new HouseColorData { HouseName = "Sheaffe", HouseColor = "FFFFFF", TextColor = "000000" },
+            new HouseColorData { HouseName = "Middleton", HouseColor = "13a25e", TextColor = "FFFFFF" },
+            new HouseColorData { HouseName = "Edwards", HouseColor = "7c2325", TextColor = "FFFFFF" },
+            new HouseColorData { HouseName = "Hay", HouseColor = "000000", TextColor = "FFFFFF" },
+            new HouseColorData { HouseName = "Eddison", HouseColor = "1f3452", TextColor = "FFFFFF" },
+            new HouseColorData { HouseName = "Garnsey", HouseColor = "3890c8", TextColor = "FFFFFF" },
+            new HouseColorData { HouseName = "Blaxland", HouseColor = "e03930", TextColor = "FFFFFF" },
+            new HouseColorData { HouseName = "Jones", HouseColor = "1b4c2b", TextColor = "FFFFFF" },
+            new HouseColorData { HouseName = "Garran", HouseColor = "513263", TextColor = "FFFFFF" }
+        };
+
 
         public void changeHeaderLabel(string s)
         {

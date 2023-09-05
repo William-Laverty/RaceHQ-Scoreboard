@@ -861,6 +861,8 @@ namespace AthleticsCarnivalScoreboard
 
         private void btnShowScoreboard_Click(object sender, EventArgs e)
         {
+            prevScoreboard prevScoreboardForm = new prevScoreboard();
+            prevScoreboardForm.Show();
 
             // Update the flag
             theScoreboardVisible = !theScoreboardVisible;

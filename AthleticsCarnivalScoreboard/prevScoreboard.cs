@@ -18,6 +18,8 @@ namespace AthleticsCarnivalScoreboard
 {
     public partial class prevScoreboard : Form
     {
+        // File Watcher
+        private FileSystemWatcher fileWatcher = new FileSystemWatcher();
 
         // The control list for the lane panels shown on screen
         public List<Panel> panelControlList { get; set; }
@@ -26,6 +28,7 @@ namespace AthleticsCarnivalScoreboard
         public List<Label> placeLabelControlList { get; set; }
         public List<Label> nameLabelControlList { get; set; }
         public List<Label> timeLabelControlList { get; set; }
+        public string eventName;
 
         // Flag indicating whether to truncate times (i.e. remove the 10 minutes and above section)
         public Boolean truncateTimes = false;
@@ -59,6 +62,15 @@ namespace AthleticsCarnivalScoreboard
 
             // Time labels
             timeLabelControlList = new List<Label>() { lblPlace1Time, lblPlace2Time, lblPlace3Time, lblPlace4Time, lblPlace5Time, lblPlace6Time, lblPlace7Time, lblPlace8Time, lblPlace9Time, lblPlace10Time };
+
+            // File Watcher
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string folderPath = Path.Combine(desktopPath, "PreviousResults");
+
+            fileWatcher.Path = folderPath;
+            fileWatcher.Filter = "*.csv";
+            fileWatcher.Created += FileWatcher_Created;
+            fileWatcher.EnableRaisingEvents = true;
 
             // Clear the scoreboard
             clearScoreboardFull();
@@ -107,6 +119,21 @@ namespace AthleticsCarnivalScoreboard
                     nameLabelControlList[i].Text = "";
                     timeLabelControlList[i].Text = "";
                 }
+            }
+        }
+
+        private void FileWatcher_Created(object sender, EventArgs e)
+        {
+            // Run on UI thread
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    LoadPreviousRaceResults();
+                }));
+            } else
+            {
+                LoadPreviousRaceResults();
             }
         }
 
@@ -159,19 +186,24 @@ namespace AthleticsCarnivalScoreboard
                 if (houseColorData != null)
                 {
                     nameLabelControlList[i].ForeColor = ColorTranslator.FromHtml($"#{houseColorData.TextColor}");
+                    placeLabelControlList[i].ForeColor = ColorTranslator.FromHtml($"#{houseColorData.TextColor}");
                     nameLabelControlList[i].BackColor = ColorTranslator.FromHtml($"#{houseColorData.HouseColor}");
+                    placeLabelControlList[i].BackColor = ColorTranslator.FromHtml($"#{houseColorData.HouseColor}");
+                    panelControlList[i].BackColor = ColorTranslator.FromHtml($"#{houseColorData.HouseColor}");
                 }
                 timeLabelControlList[i].Text = raceResults[i].Time;
                 placeLabelControlList[i].Text = raceResults[i].Place;
             }
+            lblEventHeading.Text = eventName;
         }
-
+        
         public void LoadPreviousRaceResults()
         {
             string mostRecentRaceFile = GetMostRecentRaceFile();
 
             if (!string.IsNullOrEmpty(mostRecentRaceFile))
             {
+                eventName = Path.GetFileNameWithoutExtension(mostRecentRaceFile);
                 List<RaceResult> raceResults = ParseCSVContent(mostRecentRaceFile);
                 DisplayResultsOnScoreboard(raceResults);
             }

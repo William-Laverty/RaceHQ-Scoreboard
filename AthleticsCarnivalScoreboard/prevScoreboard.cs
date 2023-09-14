@@ -187,6 +187,7 @@ namespace AthleticsCarnivalScoreboard
                 {
                     nameLabelControlList[i].ForeColor = ColorTranslator.FromHtml($"#{houseColorData.TextColor}");
                     placeLabelControlList[i].ForeColor = ColorTranslator.FromHtml($"#{houseColorData.TextColor}");
+                    timeLabelControlList[i].ForeColor = ColorTranslator.FromHtml($"#{houseColorData.TextColor}");
                     nameLabelControlList[i].BackColor = ColorTranslator.FromHtml($"#{houseColorData.HouseColor}");
                     placeLabelControlList[i].BackColor = ColorTranslator.FromHtml($"#{houseColorData.HouseColor}");
                     panelControlList[i].BackColor = ColorTranslator.FromHtml($"#{houseColorData.HouseColor}");
@@ -242,6 +243,11 @@ namespace AthleticsCarnivalScoreboard
         }
 
         private void lblEventHeading_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStopwatch_Click(object sender, EventArgs e)
         {
 
         }

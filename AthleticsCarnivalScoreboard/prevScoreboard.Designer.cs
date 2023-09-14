@@ -502,13 +502,14 @@
             // lblStopwatch
             // 
             this.lblStopwatch.Font = new System.Drawing.Font("Arial", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStopwatch.ForeColor = System.Drawing.Color.Yellow;
+            this.lblStopwatch.ForeColor = System.Drawing.Color.Black;
             this.lblStopwatch.Location = new System.Drawing.Point(1211, 124);
             this.lblStopwatch.Name = "lblStopwatch";
             this.lblStopwatch.Size = new System.Drawing.Size(684, 133);
             this.lblStopwatch.TabIndex = 15;
-            this.lblStopwatch.Text = "00:00:00.0";
+            this.lblStopwatch.Text = "Previous";
             this.lblStopwatch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblStopwatch.Click += new System.EventHandler(this.lblStopwatch_Click);
             // 
             // pnlPlace10
             // 
